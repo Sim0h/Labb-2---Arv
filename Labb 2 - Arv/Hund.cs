@@ -6,27 +6,34 @@ using System.Threading.Tasks;
 
 namespace Labb_2___Arv
 {
-    public class Hund : Djur
+    internal class Hund : Djur
     {
-        public string _Size;
+        public string Breed;
 
-        public Hund(string Colour, string Name, string Breed, int Age, int Speed, string Size) : base(Colour, Name, Breed, Age, Speed)
+        public Hund(string name = "Okänt", int age = 0, string art = "Okänt", string eats = "Okänt", double weight = 0, string breed = "Okänt") : base(name, age, art, eats, weight)
         {
-            _Size = Size;
-        }   
-
-        public void makeSound()
-        {
-            Console.WriteLine("Woff Woff!!");
+            Breed = breed;
         }
 
-        public void PrintInfo()
+        public override void makeSound()
         {
-
+            Console.WriteLine("Hunden säger Woff Woff!");
         }
-        
 
-        
+        public override void animalInfo()
+        {
+            base.animalInfo();
+            Console.WriteLine($"Hunden {Name} är av rasen : {Breed}.");
+        }
 
+        public override void isItAPet()
+        {
+            Console.WriteLine("Hunden är ett husdjur.");
+        }
+
+        public void Busig()
+        {
+            Console.WriteLine($"Hunden {Name} är busig.");
+        }
     }
 }

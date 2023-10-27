@@ -6,25 +6,35 @@ using System.Threading.Tasks;
 
 namespace Labb_2___Arv
 {
-    public class Djur
+    internal class Djur
     {
-        public string _Colour;
-        public string _Name;
-        public string _Breed;
-        public int _Age;
-        public int _Speed;
+        public string Name;
+        public int Age;
+        public string Art;
+        public string Eats;
+        public double Weight;
 
-        public Djur(string Colour, string Name,  string Breed, int Age, int Speed)
+        public Djur(string name, int age, string art, string eats, double weight)
         {
-           _Colour = Colour;
-           _Name = Name;
-           _Breed = Breed;
-           _Age = Age;
-           _Speed = Speed;
+            Name = name;
+            Age = age;
+            Art = art;
+            Eats = eats;
+            Weight = weight;
         }
 
-             
+        public virtual void makeSound()
+        {
+            Console.WriteLine("Djuret gör ett ljud");
+        }
+        public virtual void animalInfo()
+        {
+            Console.WriteLine($"Djuret heter {Name} och är {Age} år gammal.\nDjuret är en {Art}.\nDen äter {Eats} och väger {Weight} kg");
+        }
 
-        
+        public virtual void isItAPet()
+        {
+            Console.WriteLine("Djuret är ett husdjur eller inte");
+        }
     }
 }
